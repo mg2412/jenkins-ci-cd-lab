@@ -3,9 +3,10 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/mg2412/jenkins-ci-cd-lab.git'
+                git branch: 'main', url: 'https://github.com/mg2412/jenkins-ci-cd-lab.git'
             }
         }
+
         stage('Build') {
             steps {
                 sh 'mvn clean package'
