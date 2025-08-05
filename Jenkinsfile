@@ -8,8 +8,12 @@ pipeline {
         }
 
         stage('Build') {
+            
             steps {
-                bat 'mvn clean install'
+                 dir('java-app') {
+            bat 'mvn clean install'
+        }
+               
             }
         }
         stage('Archive') {
